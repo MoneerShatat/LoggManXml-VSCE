@@ -1,0 +1,41 @@
+{
+    "name": "ideloggingpltman",
+    "displayName": "ideloggingPltMan",
+    "description": "IDE LoggingTool data manipulation and plot commands grammer theme and snippets",
+    "version": "0.0.1",
+    "publisher": "mshat",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets",
+        "Themes"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ideloggingPltMan",
+            "aliases": ["ideloggingPltMan", "ideloggingPltMan"],
+            "extensions": [".loggmanxml"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ideloggingPltMan",
+            "scopeName": "source.ideloggingPltMan",
+            "path": "./syntaxes/ideloggingpltman.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "language": "ideloggingPltMan",
+                "path": "./snippets/snippets.json"
+            }
+        ],
+        "themes": [
+            {
+                "label": "ideloggingPltMan themes",
+                "uiTheme": "vs-dark",
+                "path": "./themes/themes.tmTheme"
+            }
+        ]
+    }
+}

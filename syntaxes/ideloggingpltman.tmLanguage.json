@@ -1,0 +1,438 @@
+{
+	"name": "ideloggingPltMan",
+	"patterns": [
+		{	"include": "#comments"	},{	"include": "#strings"	},
+		{	"include": "#complete"	},
+		
+		{}
+		
+		
+	],
+	"repository": {		
+		"tags": {
+			"name": "tag.ideloggingPltMan",
+			"begin": "<",
+			"end": ">",
+			"patterns": [
+				{
+					"name": "tag.name.ideloggingPltMan",
+					"match": "\\b(Operation|Value|SubPlotActions|anyType|Subplots|Subplot|FigureActions|Figure|Figures|Signals|SignalActions|SignalAndFigureConfiguration|OpenMultiDataFile|DataFilesNumber)\\b"
+				},
+				{
+					"name": "tag.operation.ideloggingPltMan",
+					"match": "\\b(SignalOperation|PlotProperty|Annotation|Save|FigureProperty)\\b"
+				},
+				{
+					"name": "constant.character.escape.ideloggingPltMan",
+					"match": "\\b(Name)\\b"
+				}
+				
+			]
+		},
+		"comments": {
+			"name": "comment.ideloggingPltMan",
+			"begin": "<!--",
+			"end": "!-->",
+			"patterns": []
+		},
+		
+		"parameters": {
+			"name": "variable.parameter.ideloggingPltMan",
+			"begin": "$",	
+			"end": ";",		
+			"patterns": []			
+		},
+		"strings": {
+			"name": "string.quoted.double.ideloggingPltMan",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.ideloggingPltMan",
+					"match": "\\\\."
+				}
+			]
+		},
+		"annotationopcmd#1":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "xpos1|xpos2|xpos3|xpos4|xpos5|xpos6|ypos1|ypos2|ypos3|ypos4|ypos5|ypos6|xpos|ypos|text-color|text-fontsize|type|xpos|ypos|color|text-content" }]},		
+		"annotationopcmd#2":{"name": "OpCmd.ideloggingPltMan",  "begin": ">lineann;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "ann#1|ann#2|ann#3|ann#4|ann#5|ann#6|ann#|text-color|text-fontsize|text-orientation|line-style|line-thickniss|color"	}]},
+		"annotationopcmd#3":{"name": "OpCmd.ideloggingPltMan",  "begin": ">pointann;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "ann#1|ann#2|ann#3|ann#4|ann#5|ann#6|ann#|text-color|text-fontsize|color"	}]},
+		"annotationopcmd#4":{"name": "OpCmd.ideloggingPltMan",  "begin": ">textann;", "end": "<", "patterns": [{ "name": "OpCmdConf.ideloggingPltMan", "match": "ann#1|ann#2|ann#3|ann#4|ann#5|ann#6|ann#|text-color|text-fontsize|background|text-content"}]},
+		
+		"annotationop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"Annotation\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#annotationopcmd#1"},
+								{	"include": "#annotationopcmd#2"},
+								{	"include": "#annotationopcmd#3"},
+								{	"include": "#annotationopcmd#4"},
+								{	"include": "#comments"	},{	"include": "#strings"	}
+							]
+						},
+						{	"include": "#comments"	},{	"include": "#strings"	}]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"signalopcmd#1":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|sig3|sig4|sig5|sig6|sig7|factor|sig|title" },{	"name": "correctcmd.ideloggingPltMan", "match": "add;" }]},		
+		"signalopcmd#2":{"name": "OpCmd.ideloggingPltMan",  "begin": ">mult;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|sig3|sig4|sig5|sig6|sig7|factor|sig|title"	}]},
+		"signalopcmd#3":{"name": "OpCmd.ideloggingPltMan",  "begin": ">subt;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|sig3|sig4|sig5|sig6|sig7|factor|sig|title"	}]},
+		"signalopcmd#4":{"name": "OpCmd.ideloggingPltMan",  "begin": ">divide;", "end": "<", "patterns": [{ "name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|sig3|sig4|sig5|sig6|sig7|factor|sig|title"}]},
+		"signalopcmd#5":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|title"}]},
+		"signalopcmd#6":{"name": "OpCmd.ideloggingPltMan",  "begin": ">subt-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|title"}]},
+		"signalopcmd#7":{"name": "OpCmd.ideloggingPltMan",  "begin": ">mult-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|title"}]},
+		"signalopcmd#8":{"name": "OpCmd.ideloggingPltMan",  "begin": ">divide-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|title"}]},
+		"signalopcmd#9":{"name": "OpCmd.ideloggingPltMan",  "begin": ">avg;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param|mult|sig" }]},
+		"signalopcmd#10":{"name": "OpCmd.ideloggingPltMan", "begin": ">min;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param|mult|sig" }]},
+		"signalopcmd#11":{"name": "OpCmd.ideloggingPltMan", "begin": ">max;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param|mult|sig" }]},
+		"signalopcmd#12":{"name": "OpCmd.ideloggingPltMan", "begin": ">std;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param|mult|sig" }]},
+		"signalopcmd#13":{"name": "OpCmd.ideloggingPltMan", "begin": ">pkpk;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param|mult|sig" }]},
+		"signalopcmd#14":{"name": "OpCmd.ideloggingPltMan", "begin": ">average;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|factor|sig|title" }]},
+		"signalopcmd#15":{"name": "OpCmd.ideloggingPltMan", "begin": ">median;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|factor|sig|title" }]},
+		"signalopcmd#16":{"name": "OpCmd.ideloggingPltMan", "begin": ">derivative;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|factor|sig|title" }]},
+		"signalopcmd#17":{"name": "OpCmd.ideloggingPltMan", "begin": ">rms;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|factor|sig|title" }]},
+		"signalopcmd#18":{"name": "OpCmd.ideloggingPltMan", "begin": ">integarte;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|factor|sig|title" }]},
+		"signalopcmd#19":{"name": "OpCmd.ideloggingPltMan", "begin": ">xysig;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|xsig|ysig|title" }]},
+		"signalopcmd#20":{"name": "OpCmd.ideloggingPltMan", "begin": ">remove-points;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig1|sig2|sig3|sig4|sig5|sig6|sig7|index2|first|index1|last|sig"	}]},
+		"signalopcmd#21":{"name": "OpCmd.ideloggingPltMan", "begin": ">add-from-csv;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|file|title" }]},		
+		"signalopcmd#22":{"name": "OpCmd.ideloggingPltMan", "begin": ">clone;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig|sig|title"	}]},
+		"signalopcmd#23":{"name": "OpCmd.ideloggingPltMan", "begin": ">remove-points;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "sig1|sig2|sig3|sig4|sig5|sig6|sig7|sig"	}]},
+		"signalop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"SignalOperation\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": 
+					[
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": 
+							[
+								
+								{	"include": "#signalopcmd#1"},
+								{	"include": "#signalopcmd#2"},
+								{	"include": "#signalopcmd#3"},
+								{	"include": "#signalopcmd#4"},
+								{	"include": "#signalopcmd#5"},
+								{	"include": "#signalopcmd#6"},
+								{	"include": "#signalopcmd#7"},
+								{	"include": "#signalopcmd#8"},
+								{	"include": "#signalopcmd#9"},
+								{	"include": "#signalopcmd#10"},
+								{	"include": "#signalopcmd#11"},
+								{	"include": "#signalopcmd#12"},
+								{	"include": "#signalopcmd#13"},
+								{	"include": "#signalopcmd#14"},
+								{	"include": "#signalopcmd#15"},
+								{	"include": "#signalopcmd#16"},
+								{	"include": "#signalopcmd#17"},
+								{	"include": "#signalopcmd#18"},
+								{	"include": "#signalopcmd#19"},
+								{	"include": "#signalopcmd#20"},
+								{	"include": "#signalopcmd#21"},
+								{	"include": "#signalopcmd#22"},
+								{	"include": "#comments"	},{	"include": "#strings"	}
+							]
+						},
+						{	"include": "#comments"	},{	"include": "#strings"	}
+					]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"plotopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">plot;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "title-color|title-fontsize|title-font|title-fontweight|title|legend-style|legend-text-fontsize|legend-text-color|legend|border-color|border-thickniss|background|grid|rescale" }]},		
+		"plotopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-line-color;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve#"	}]},
+		"plotopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-remove;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve#"	}]},
+		"plotopcmd#4":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-line-style;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve#"	}]},
+		"plotopcmd#5":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve#"	}]},
+		"plotopcmd#6":{"name": "OpCmd.ideloggingPltMan", "begin": ">xaxis;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "label-fontsize|label-color|label|text-color|minor-grid-color|major-grid-color|minor-grid-width|major-grid-width|tick-color|line-color|fontsize|min|max"	}]},
+		"plotopcmd#7":{"name": "OpCmd.ideloggingPltMan", "begin": ">yaxis;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "label-fontsize|label-color|label|text-color|minor-grid-color|major-grid-color|minor-grid-width|major-grid-width|tick-color|line-color|fontsize|min|max"	}]},
+		"plotopcmd#8":{"name": "OpCmd.ideloggingPltMan", "begin": ">tracker-string-format;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "format"}]},
+		"plotopcmd#9":{"name": "OpCmd.ideloggingPltMan", "begin": ">add-curve-from-csv;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file"}]},
+		"plotopcmd#10":{"name": "OpCmd.ideloggingPltMan", "begin": ">default-curves-color;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve#"	}]},
+
+		"plotop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"PlotProperty\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#plotopcmd#1"},
+								{	"include": "#plotopcmd#2"},
+								{	"include": "#plotopcmd#3"},
+								{	"include": "#plotopcmd#4"},
+								{	"include": "#plotopcmd#5"},
+								{	"include": "#plotopcmd#6"},
+								{	"include": "#plotopcmd#7"},
+								{	"include": "#plotopcmd#8"},
+								{	"include": "#plotopcmd#9"},
+								{	"include": "#plotopcmd#10"},
+								
+								{	"include": "#comments"	},{	"include": "#strings"	}]
+						},
+						{	"include": "#comments"	},{	"include": "#strings"	}]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"saveopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum|file" }]},		
+		"saveopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "plotnum|fignum|file"	}]},
+		"saveopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum|file"	}]},
+
+		"saveop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"Save\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#saveopcmd#1"},
+								{	"include": "#saveopcmd#2"},
+								{	"include": "#saveopcmd#3"},
+								{	"include": "#comments"	},{	"include": "#strings"	}]
+						},{	"include": "#comments"	},{	"include": "#strings"	}
+					]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"restyleopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum|file" }]},		
+		"restyleopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "plotnum|file"	}]},
+		"restyleopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum|file"	}]},
+
+		"restyleop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"Restyle\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#restyleopcmd#1"},
+								{	"include": "#restyleopcmd#2"},
+								{	"include": "#restyleopcmd#3"},
+								{
+									"name": "OpCmd.ideloggingPltMan",
+									"match": "loggfig|loggplot"
+								},
+								{
+									"name": "OpCmdConf.ideloggingPltMan",
+									"match": "fignum|file|plotnum"
+								},
+								{	"include": "#comments"	},{	"include": "#strings"	}]
+						},{	"include": "#comments"	},{	"include": "#strings"	}
+					]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"directoryopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">directory;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file" }]},		
+		"directoryopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">create;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file"	}]},
+		"directoryopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">change;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file"	}]},
+
+		"directoryop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"Directory\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#directoryopcmd#1"},
+								{	"include": "#directoryopcmd#2"},
+								{	"include": "#directoryopcmd#3"},							
+								{	"include": "#comments"	},{	"include": "#strings"	}]
+						},{	"include": "#comments"	},{	"include": "#strings"	}
+					]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"figureopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">figure;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "title-color|title-background|width|height|title-fontsize|title-font|title-fontweight|title" }]},		
+		"figureop": 
+		{
+			"name": "operation.ideloggingPltMan",
+			"begin": "<Operation Name=\"FigureProperty\">",
+			"end": "</Operation>",
+			"patterns": [
+				{
+					"name": "correctvalue.ideloggingPltMan",
+					"begin": "<Value>",
+					"end": "</Value>",
+					"patterns": [
+						{
+							"name": "correctcmd.ideloggingPltMan",
+							"begin": "<anyType xsi:type=\"xsd:string\"",
+							"end": "/anyType>",
+							"patterns": [
+								{	"include": "#figureopcmd#1"},
+								{	"include": "#comments"	},{	"include": "#strings"	}]
+						},
+						{	"include": "#comments"	},{	"include": "#strings"	}]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"signals": 
+		{
+			"name": "signal.ideloggingPltMan",
+			"begin": "<Signals IsActive=\"true\">|<Signals IsActive=\"false\">",			
+			"end": "</Signals>",
+			"patterns": [
+				{
+					"name": "signal.signalactions.ideloggingPltMan",
+					"begin": "<SignalActions>",
+					"end": "</SignalActions>",
+					"patterns": [
+							{"include": "#signalop"},
+							{	"include": "#comments"	},{	"include": "#strings"	}
+						]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"postops": 
+		{
+			"name": "postoperation.ideloggingPltMan",
+			"begin": "<PostOperations>",
+			"end": "</PostOperations>",
+			"patterns": [
+				
+						{"include": "#saveop"},
+						{"include": "#restyleop"},
+						{"include": "#directoryop"},
+						{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+				
+			
+		},
+		"figures": 
+		{
+			"name": "figures.ideloggingPltMan",
+			"begin": "<Figures>",
+			"end": "</Figures>",
+			"patterns": [
+				{
+					"name": "figures.figure.ideloggingPltMan",
+					"begin": "<Figure IsActive=",
+					"end": "</Figure>",
+					"patterns": [
+						{
+							"name": "figures.figure.subplots.ideloggingPltMan",
+							"begin": "<Subplots>",
+							"end": "</Subplots>",
+							"patterns": [
+								{
+									"name": "figures.figure.subplots.subplot.ideloggingPltMan",
+									"begin": "<Subplot Row=",
+									"end": "</Subplot>",
+									"patterns": [
+										{
+											"name": "figures.figure.subplots.subplot.subplotactions.ideloggingPltMan",
+											"begin": "<SubPlotActions>",
+											"end": "</SubPlotActions>",
+											"patterns": [
+												{"include": "#plotop"},
+												{"include": "#annotationop"},
+												{	"include": "#comments"	},{	"include": "#strings"	}
+											]
+										},
+										{	"include": "#comments"	},{	"include": "#strings"	}
+									]
+								},
+								{	"include": "#comments"	},{	"include": "#strings"	}
+							]
+						},
+						{
+							"name": "figureactions.ideloggingPltMan",
+							"begin": "<FigureActions>",
+							"end": "</FigureActions>",							
+							"patterns": [
+								{"include": "#plotop"},
+								{"include": "#annotationop"},
+								{	"include": "#comments"	},{	"include": "#strings"	},
+								{	"include": "#figureop"	}
+							]
+						},
+						{	"include": "#comments"	},{	"include": "#strings"	}
+								
+							
+					]
+				},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+			]
+		},
+		"complete": 
+		{
+			"name": "complete.ideloggingPltMan",
+			"begin": "<SignalAndFigureConfiguration",
+			"end": "</SignalAndFigureConfiguration>",
+			"patterns": [
+				{
+					"name": "signal.ideloggingPltMan",
+					"match": "SignalAndFigureConfiguration|OpenMultiDataFile|DataFilesNumber"
+				},
+				{"include": "#signals"},
+				{"include": "#figures"},
+				{"include": "#postops"},
+				{	"include": "#comments"	},{	"include": "#strings"	}
+				
+			]
+		}
+	},
+	"scopeName": "source.ideloggingPltMan"
+}
