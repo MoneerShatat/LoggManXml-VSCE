@@ -21,9 +21,9 @@ If you have any requirements or dependencies, add a section describing those and
 Extension Settings
 Include if your extension adds any VS Code settings through the contributes.configuration extension point.
 
-## Use example:
+## Use example
 
-![Use Example](D:\temp\DeleteMe\chroniclerAnimatedGifs\vscode-1554286519071.gif)
+![Use Example](https://github.com/MoneerShatat/LoggManXml-VSCE/blob/master/images/vscode-1554289688885.gif)
 
 ## Known Issues
 
