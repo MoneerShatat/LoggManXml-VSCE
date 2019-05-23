@@ -1,4 +1,4 @@
-# ideloggingPltMan README
+# LoggManXml-VSCE README
 
 This extension help you by generating a new ide Logg data manipulation and plotting file .loggmanxml.
 
@@ -8,7 +8,7 @@ This extension help you by generating a new ide Logg data manipulation and plott
 
 ### Specific theme
 
-This extension contains a special theme for the .loggmanxml file
+This extension contains a special theme for the .loggmanxml file. It is not for usual use. It is only for customer of the IDE GmbH company in Raunheim.
 
 ### Snippets
 

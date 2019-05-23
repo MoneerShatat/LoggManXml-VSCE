@@ -4,6 +4,11 @@ All notable changes to the "sidimatamf" extension will be documented in this fil
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.2]
+
+- adds theme for the "log" command to xaxis.
+- adds theme for the new SignalOperation command "export-to-csv".
+
 ## [0.0.1]
 
 - Initial release

@@ -1,12 +1,17 @@
 {
-    "name": "ideloggingpltman",
-    "displayName": "ideloggingPltMan",
+    "name": "loggmanxml-vsce",
+    "displayName": "LoggManXml-VSCE",
     "description": "IDE LoggingTool data manipulation and plot commands grammer theme and snippets",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "mshat",
     "engines": {
         "vscode": "^1.18.0"
     },
+    "homepage": "https://github.com/MoneerShatat/LoggManXml-VSCE/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MoneerShatat/LoggManXml-VSCE.git"
+      },
     "categories": [
         "Programming Languages",
         "Snippets",
