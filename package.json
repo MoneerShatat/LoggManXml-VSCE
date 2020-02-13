@@ -2,7 +2,7 @@
     "name": "loggmanxml-vsce",
     "displayName": "LoggManXml-VSCE",
     "description": "IDE LoggingTool data manipulation and plot commands grammer theme and snippets",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "mshat",
     "engines": {
         "vscode": "^1.18.0"
@@ -39,7 +39,8 @@
             {
                 "label": "ideloggingPltMan themes",
                 "uiTheme": "vs-dark",
-                "path": "./themes/themes.tmTheme"
+                "path": "./themes/loggmanthemes.json"
+              
             }
         ]
     }

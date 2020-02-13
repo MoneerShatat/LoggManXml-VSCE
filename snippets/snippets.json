@@ -155,6 +155,11 @@
         "body": [ "<anyType xsi:type=\"xsd:string\">curves-remove; curve#1:${1:1}; curve#2:${2:2)</anyType>" ],
         "description": "remove the listed curves from plot"
     },
+    "plot->curve-line-thickness": {
+        "prefix": "curvethickness",
+        "body": [ "<anyType xsi:type=\"xsd:string\">curves-line-thickness; curve#1:${1:1}; curve#2:${2:1)</anyType>" ],
+        "description": "PlotProperty curve-line-thickness cmd"
+    },
     "plot->curves": {
         "prefix": "curves",
         "body": [ "<anyType xsi:type=\"xsd:string\">curves; curve#1:${1:F1S1}; curve#2:${2:F1S2};</anyType>" ],
