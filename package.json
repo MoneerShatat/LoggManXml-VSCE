@@ -14,34 +14,26 @@
       },
     "categories": [
         "Programming Languages",
-        "Snippets",
-        "Themes"
+        "Snippets"
     ],
     "contributes": {
         "languages": [{
-            "id": "ideloggingPltMan",
-            "aliases": ["ideloggingPltMan", "ideloggingPltMan"],
+            "id": "xml",
+            "aliases": ["ideloggingPltMan", "xml"],
             "extensions": [".loggmanxml"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
-            "language": "ideloggingPltMan",
+            "language": "xml",
             "scopeName": "source.ideloggingPltMan",
             "path": "./syntaxes/ideloggingpltman.tmLanguage.json"
         }],
         "snippets": [
             {
-                "language": "ideloggingPltMan",
+                "language": "xml",
                 "path": "./snippets/snippets.json"
             }
-        ],
-        "themes": [
-            {
-                "label": "ideloggingPltMan themes",
-                "uiTheme": "vs-dark",
-                "path": "./themes/loggmanthemes.json"
-              
-            }
         ]
+        
     }
 }

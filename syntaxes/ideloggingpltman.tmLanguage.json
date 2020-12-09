@@ -34,24 +34,24 @@
 				}
 			]
 		},
-		"annotationopcmd#1":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "xpos1:|xpos2:|xpos3:|xpos4:|xpos5:|xpos6:|ypos1:|ypos2:|ypos3:|ypos4:|ypos5:|ypos6:|xpos:|ypos:|text-color:|text-fontsize:|type:|xpos:|ypos:|color:|text-content:" }]},		
-		"annotationopcmd#2":{"name": "OpCmd.ideloggingPltMan",  "begin": ">lineann;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|text-orientation:|line-style:|line-thickness:|color:|text-content:"	}]},
-		"annotationopcmd#3":{"name": "OpCmd.ideloggingPltMan",  "begin": ">pointann;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|color:"	}]},
-		"annotationopcmd#4":{"name": "OpCmd.ideloggingPltMan",  "begin": ">textann;", "end": "<", "patterns": [{ "name": "OpCmdConf.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|background:|text-content:"}]},
+		"annotationopcmd#1":{"name": "support.type.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "xpos1:|xpos2:|xpos3:|xpos4:|xpos5:|xpos6:|ypos1:|ypos2:|ypos3:|ypos4:|ypos5:|ypos6:|xpos:|ypos:|text-color:|text-fontsize:|type:|xpos:|ypos:|color:|text-content:" }]},		
+		"annotationopcmd#2":{"name": "support.type.ideloggingPltMan",  "begin": ">lineann;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|text-orientation:|line-style:|line-thickness:|color:|text-content:"	}]},
+		"annotationopcmd#3":{"name": "support.type.ideloggingPltMan",  "begin": ">pointann;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|color:"	}]},
+		"annotationopcmd#4":{"name": "support.type.ideloggingPltMan",  "begin": ">textann;", "end": "<", "patterns": [{ "name": "keyword.control.ideloggingPltMan", "match": "ann#1:|ann#2:|ann#3:|ann#4:|ann#5:|ann#6:|ann#:|text-color:|text-fontsize:|background:|text-content:"}]},
 		
 		"annotationop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"Annotation\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -67,49 +67,50 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"signalopcmd#1":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:" }]},		
-		"signalopcmd#27":{"name": "OpCmd.ideloggingPltMan",  "begin": ">title;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "title:|sig:"	}]},
-		"signalopcmd#28":{"name": "OpCmd.ideloggingPltMan",  "begin": ">remove;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "sig:"	}]},
-		"signalopcmd#2":{"name": "OpCmd.ideloggingPltMan",  "begin": ">mult;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"	}]},
-		"signalopcmd#3":{"name": "OpCmd.ideloggingPltMan",  "begin": ">subt;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"	}]},
-		"signalopcmd#4":{"name": "OpCmd.ideloggingPltMan",  "begin": ">divide;", "end": "<", "patterns": [{ "name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"}]},
-		"signalopcmd#5":{"name": "OpCmd.ideloggingPltMan",  "begin": ">add-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#6":{"name": "OpCmd.ideloggingPltMan",  "begin": ">subt-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#7":{"name": "OpCmd.ideloggingPltMan",  "begin": ">mult-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#8":{"name": "OpCmd.ideloggingPltMan",  "begin": ">divide-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#25":{"name": "OpCmd.ideloggingPltMan",  "begin": ">integrate-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#26":{"name": "OpCmd.ideloggingPltMan",  "begin": ">derivative-2sig;", "end": "<","patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
-		"signalopcmd#9":{"name": "OpCmd.ideloggingPltMan",  "begin": ">avg;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
-		"signalopcmd#10":{"name": "OpCmd.ideloggingPltMan", "begin": ">min;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
-		"signalopcmd#11":{"name": "OpCmd.ideloggingPltMan", "begin": ">max;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
-		"signalopcmd#12":{"name": "OpCmd.ideloggingPltMan", "begin": ">std;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
-		"signalopcmd#13":{"name": "OpCmd.ideloggingPltMan", "begin": ">pkpk;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
-		"signalopcmd#14":{"name": "OpCmd.ideloggingPltMan", "begin": ">average;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
-		"signalopcmd#15":{"name": "OpCmd.ideloggingPltMan", "begin": ">median;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
-		"signalopcmd#16":{"name": "OpCmd.ideloggingPltMan", "begin": ">derivative;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
-		"signalopcmd#17":{"name": "OpCmd.ideloggingPltMan", "begin": ">rms;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
-		"signalopcmd#18":{"name": "OpCmd.ideloggingPltMan", "begin": ">integarte;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
-		"signalopcmd#19":{"name": "OpCmd.ideloggingPltMan", "begin": ">xysig;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|xsig:|ysig:|title:" }]},
-		"signalopcmd#20":{"name": "OpCmd.ideloggingPltMan", "begin": ">remove-points;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|sig8:|sig9|index2:|first:|index1:|last:|sig:"	}]},
-		"signalopcmd#21":{"name": "OpCmd.ideloggingPltMan", "begin": ">add-from-csv;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|file:|title:" }]},		
-		"signalopcmd#22":{"name": "OpCmd.ideloggingPltMan", "begin": ">clone;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|sig:|title:"	}]},
-		"signalopcmd#23":{"name": "OpCmd.ideloggingPltMan", "begin": ">export-to-csv;", "end": "<",	"patterns": [{	"name": "OpCmdConf.ideloggingPltMan", "match": "sig:|file:" }]},		
-		"signalopcmd#24":{"name": "OpCmd.ideloggingPltMan", "begin": ">filter;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "newsig:|type:|par1:|par2:|par3:|par4:|par5:|sig:|title:" }]},
+		"signalopcmd#1":{"name": "support.type.ideloggingPltMan",  "begin": ">add;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:" }]},		
+		"signalopcmd#27":{"name": "support.type.ideloggingPltMan",  "begin": ">title;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "title:|sig:"	}]},
+		"signalopcmd#28":{"name": "support.type.ideloggingPltMan",  "begin": ">remove;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "sig:"	}]},
+		"signalopcmd#2":{"name": "support.type.ideloggingPltMan",  "begin": ">mult;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"	}]},
+		"signalopcmd#3":{"name": "support.type.ideloggingPltMan",  "begin": ">subt;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"	}]},
+		"signalopcmd#4":{"name": "support.type.ideloggingPltMan",  "begin": ">divide;", "end": "<", "patterns": [{ "name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|factor:|sig:|title:"}]},
+		"signalopcmd#5":{"name": "support.type.ideloggingPltMan",  "begin": ">add-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#6":{"name": "support.type.ideloggingPltMan",  "begin": ">subt-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#7":{"name": "support.type.ideloggingPltMan",  "begin": ">mult-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#8":{"name": "support.type.ideloggingPltMan",  "begin": ">divide-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#25":{"name": "support.type.ideloggingPltMan",  "begin": ">integrate-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#26":{"name": "support.type.ideloggingPltMan",  "begin": ">derivative-2sig;", "end": "<","patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|title:"}]},
+		"signalopcmd#9":{"name": "support.type.ideloggingPltMan",  "begin": ">avg;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
+		"signalopcmd#10":{"name": "support.type.ideloggingPltMan", "begin": ">min;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
+		"signalopcmd#11":{"name": "support.type.ideloggingPltMan", "begin": ">max;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
+		"signalopcmd#12":{"name": "support.type.ideloggingPltMan", "begin": ">std;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
+		"signalopcmd#13":{"name": "support.type.ideloggingPltMan", "begin": ">pkpk;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "param:|mult:|sig:" }]},
+		"signalopcmd#14":{"name": "support.type.ideloggingPltMan", "begin": ">average;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
+		"signalopcmd#15":{"name": "support.type.ideloggingPltMan", "begin": ">median;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
+		"signalopcmd#16":{"name": "support.type.ideloggingPltMan", "begin": ">derivative;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
+		"signalopcmd#17":{"name": "support.type.ideloggingPltMan", "begin": ">rms;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
+		"signalopcmd#18":{"name": "support.type.ideloggingPltMan", "begin": ">integarte;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|factor:|sig:|title:" }]},
+		"signalopcmd#19":{"name": "support.type.ideloggingPltMan", "begin": ">xysig;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|xsig:|ysig:|title:" }]},
+		"signalopcmd#20":{"name": "support.type.ideloggingPltMan", "begin": ">remove-points;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig1:|sig2:|sig3:|sig4:|sig5:|sig6:|sig7:|sig8:|sig9|index2:|first:|index1:|last:|sig:"	}]},
+		"signalopcmd#21":{"name": "support.type.ideloggingPltMan", "begin": ">add-from-csv;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|file:|title:" }]},		
+		"signalopcmd#22":{"name": "support.type.ideloggingPltMan", "begin": ">clone;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "newsig:|sig:|title:"	}]},
+		"signalopcmd#23":{"name": "support.type.ideloggingPltMan", "begin": ">export-to-csv;", "end": "<",	"patterns": [{	"name": "keyword.control.ideloggingPltMan", "match": "sig:|file:" }]},		
+		"signalopcmd#24":{"name": "support.type.ideloggingPltMan", "begin": ">filter;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "newsig:|type:|par1:|par2:|par3:|par4:|par5:|sig:|title:" }]},
+        "SignalsPattern":{"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "sig#?\\d?\\d?:[^[;\\s?\\s?sig:]?]+;"	}]},
 
 		"signalop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"SignalOperation\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": 
 					[
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": 
@@ -153,33 +154,27 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"plotopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">plot;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "title-color:|title-fontsize:|title-font:|title-fontweight:|title:|legend-style:|legend-text-fontsize:|legend-text-color:|legend:|border-color:|border-thickness:|background:|grid:|rescale:" }]},		
-		"plotopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-line-color;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve#:|curve:"	}]},
-		"plotopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-remove;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve#:"	}]},
-		"plotopcmd#4":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-line-style;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve:"	}]},
-		"plotopcmd#5":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve#:"	}]},
-		"plotopcmd#6":{"name": "OpCmd.ideloggingPltMan", "begin": ">xaxis;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "label-fontsize:|label-color:|label:|text-color:|minor-grid-color:|major-grid-color:|minor-grid-width:|major-grid-width:|tick-color:|line-color:|fontsize:|min:|max:|log:"	}]},
-		"plotopcmd#7":{"name": "OpCmd.ideloggingPltMan", "begin": ">yaxis;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "label-fontsize:|label-color:|label:|text-color:|minor-grid-color:|major-grid-color:|minor-grid-width:|major-grid-width:|tick-color:|line-color:|fontsize:|min:|max:|log:"	}]},
-		"plotopcmd#8":{"name": "OpCmd.ideloggingPltMan", "begin": ">tracker-string-format;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "format:"}]},
-		"plotopcmd#9":{"name": "OpCmd.ideloggingPltMan", "begin": ">add-curve-from-csv;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file:"}]},
-		"plotopcmd#10":{"name": "OpCmd.ideloggingPltMan", "begin": ">default-curves-color;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve:"	}]},
-		"plotopcmd#11":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-line-thickniss;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10|curve#1|curve#2|curve#3|curve#4|curve#5|curve#6|curve#7|curve#8|curve#9|curve"	}]},
-		"plotopcmd#12":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-color;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve:"	}]},
-		"plotopcmd#13":{"name": "OpCmd.ideloggingPltMan", "begin": ">curves-title;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve:"	}]},
-		"plotopcmd#14":{"name": "OpCmd.ideloggingPltMan", "begin": ">curve;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve#:|line-color:|remove:|line-style:|line-thickness:|title"	}]},
-		"plotop": 
+		"plotopcmd#1":{"name": "support.type.ideloggingPltMan", "begin": ">plot;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "title-color:|title-fontsize:|title-font:|title-fontweight:|title:|legend-style:|legend-text-fontsize:|legend-text-color:|legend:|border-color:|border-thickness:|background:|grid:|rescale:" }]},		
+		"plotopcmd#2":{"name": "support.type.ideloggingPltMan", "begin": ">curves-line-color;|>curves-remove;|>curves-line-style;|>curves;|>default-curves-color;|>curves-line-thickniss;|>curves-color;|>curves-title;", "end": "<","patterns": [{"include": "#CurvesPattern"}]},
+		"plotopcmd#6":{"name": "support.type.ideloggingPltMan", "begin": ">xaxis;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "label-fontsize:|label-color:|label:|text-color:|minor-grid-color:|major-grid-color:|minor-grid-width:|major-grid-width:|tick-color:|line-color:|fontsize:|min:|max:|log:"	}]},
+		"plotopcmd#7":{"name": "support.type.ideloggingPltMan", "begin": ">yaxis;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "label-fontsize:|label-color:|label:|text-color:|minor-grid-color:|major-grid-color:|minor-grid-width:|major-grid-width:|tick-color:|line-color:|fontsize:|min:|max:|log:"	}]},
+		"plotopcmd#8":{"name": "support.type.ideloggingPltMan", "begin": ">tracker-string-format;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "format:"}]},
+		"plotopcmd#9":{"name": "support.type.ideloggingPltMan", "begin": ">add-curve-from-csv;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "file:"}]},
+		"plotopcmd#14":{"name": "support.type.ideloggingPltMan", "begin": ">curve;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "curve#10:|curve#1:|curve#2:|curve#3:|curve#4:|curve#5:|curve#6:|curve#7:|curve#8:|curve#9:|curve#:|line-color:|remove:|line-style:|line-thickness:|title"	}]},
+        "CurvesPattern":{"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "curve#?\\d?\\d?:[^[;\\s?\\s?curve:]?]+;"	}]},
+        "plotop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"PlotProperty\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -204,23 +199,23 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"saveopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum:|file:" }]},		
-		"saveopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "plotnum:|fignum:|file:"	}]},
-		"saveopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum:|file:"	}]},
+		"saveopcmd#1":{"name": "support.type.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "fignum:|file:" }]},		
+		"saveopcmd#2":{"name": "support.type.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "plotnum:|fignum:|file:"	}]},
+		"saveopcmd#3":{"name": "support.type.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "fignum:|file:"	}]},
 
 		"saveop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"Save\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -234,23 +229,23 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"restyleopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum:|file:" }]},		
-		"restyleopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "plotnum:|file:"	}]},
-		"restyleopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "fignum:|file:"	}]},
+		"restyleopcmd#1":{"name": "support.type.ideloggingPltMan", "begin": ">loggfig2pic;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "fignum:|file:" }]},		
+		"restyleopcmd#2":{"name": "support.type.ideloggingPltMan", "begin": ">loggplot2pic;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "plotnum:|file:"	}]},
+		"restyleopcmd#3":{"name": "support.type.ideloggingPltMan", "begin": ">loggfig2fig;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "fignum:|file:"	}]},
 
 		"restyleop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"Restyle\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -265,23 +260,23 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"directoryopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">directory;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file" }]},		
-		"directoryopcmd#2":{"name": "OpCmd.ideloggingPltMan", "begin": ">create;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file"	}]},
-		"directoryopcmd#3":{"name": "OpCmd.ideloggingPltMan", "begin": ">change;", "end": "<","patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "file"	}]},
+		"directoryopcmd#1":{"name": "support.type.ideloggingPltMan", "begin": ">directory;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "file" }]},		
+		"directoryopcmd#2":{"name": "support.type.ideloggingPltMan", "begin": ">create;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "file"	}]},
+		"directoryopcmd#3":{"name": "support.type.ideloggingPltMan", "begin": ">change;", "end": "<","patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "file"	}]},
 
 		"directoryop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"Directory\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -295,20 +290,20 @@
 				{	"include": "#comments"	},{	"include": "#strings"	}
 			]
 		},
-		"figureopcmd#1":{"name": "OpCmd.ideloggingPltMan", "begin": ">figure;", "end": "<",	"patterns": [{"name": "OpCmdConf.ideloggingPltMan", "match": "title-color:|title-background:|width:|height:|title-fontsize:|title-font:|title-fontweight:|title" }]},		
+		"figureopcmd#1":{"name": "support.type.ideloggingPltMan", "begin": ">figure;", "end": "<",	"patterns": [{"name": "keyword.control.ideloggingPltMan", "match": "title-color:|title-background:|width:|height:|title-fontsize:|title-font:|title-fontweight:|title" }]},		
 		"figureop": 
 		{
-			"name": "operation.ideloggingPltMan",
+			"name": "token.error-token.ideloggingPltMan",
 			"begin": "<Operation Name=\"FigureProperty\">",
 			"end": "</Operation>",
 			"patterns": [
 				{
-					"name": "correctvalue.ideloggingPltMan",
+					"name": "punctuation.definition.tag.ideloggingPltMan",
 					"begin": "<Value>",
 					"end": "</Value>",
 					"patterns": [
 						{
-							"name": "correctcmd.ideloggingPltMan",
+							"name": "meta.preprocessor.ideloggingPltMan",
 							"begin": "<anyType xsi:type=\"xsd:string\"",
 							"end": "/anyType>",
 							"patterns": [
@@ -340,7 +335,7 @@
 		},
 		"postops": 
 		{
-			"name": "postoperation.ideloggingPltMan",
+			"name": "posttoken.error-token.ideloggingPltMan",
 			"begin": "<PostOperations>",
 			"end": "</PostOperations>",
 			"patterns": [
